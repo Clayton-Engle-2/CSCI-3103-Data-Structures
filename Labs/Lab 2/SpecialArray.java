@@ -16,13 +16,13 @@ package lab2;
  * variables to repeat the process in a smaller box, starting and ending in the top left.
  * 
  * On the third problem my goal was to have the program collect elements from a full row, or column, until it was unable to, then 
- * turn left, and repeat. This is a smaller task than encircling the entire array and incrementally decreasing the parameters. 
+ * turn right, and repeat. This is a smaller task than encircling the entire array and incrementally decreasing the parameters. 
  * To do this I start with an if statement to check all possible cases where the "direction" of collection would need to turn.
  * Then I have a switch statement which provides slightly different instructions based on the current "direction" of collection.
  * Each case will recursively call the getSpiral() method with updated parameters to keep the current direction the same. If an 
  * index outside the bounds of the array is passed in, the catch all if statement will trigger and pop the method from the 
  * instruction  stack. The JVM will continue execution  from the next line of code in the previous method, which will change the
- * current direction to it`s respective left, and repeat. To prevent the program from overlapping, or adding the same index twice,
+ * current direction to it`s respective right, and repeat. To prevent the program from overlapping, or adding the same index twice,
  * I added an equally sized 2D array of type boolean. When an index is added, the corresponding boolean will be set to true. 
  * When all indexes surrounding the current index are invalid moves, all method calls will be returned, and the program will 
  * will exit the method entirely, returning a String of the elements in the array in "clockwise spiral" order.
@@ -188,7 +188,7 @@ public class SpecialArray {
 	 * @return string representation of elements in spiral order
 	 */
 	private static String getSpiral(int[][] arr, int row, int col, boolean[][] visited, StringBuilder result, int direction) {
-		// if something goes wrong, return the String as is
+		// if next index is out of bounds, or has been previously visited, return out of recursive loop
 		if (row < 0 || row >= arr.length || col < 0 || col >= arr[0].length || visited[row][col]) {
 			return result.toString().trim();
 		}
