@@ -9,7 +9,7 @@ package lab2;
  * Problem 1:
  * 	 For the first problem I created a recursive solution because I know the basics of how recursion works and wanted practice
  * 	 implementing the concept in code. Recursion may not be more efficient with a small, sorted data set but will surely 
- *   perform better with more data. My main idea is to increment where I begin checking for target matches, since elements 
+ *       perform better with more data. My main idea is to increment where I begin checking for target matches, since elements 
  *	 that occur early in the array will have already been compared to other low index elements, and do not need to be checked twice.
  * 
  * Problem 2:
