@@ -55,17 +55,18 @@ public class StackExercise {
 			        return lst;
 			    }
 
-			    LinkedList<String> reversed = new LinkedList<String>();
+			    Stack<String> stack = new Stack<>();
+			    for (String element : lst) {
+			        stack.push(element);
+			    }
 
-			    for (int i = lst.size() - 1; i >= 0; i--) {
-			        reversed.add(lst.get(i));
+			    LinkedList<String> reversed = new LinkedList<>();
+			    while (!stack.isEmpty()) {
+			        reversed.add(stack.pop());
 			    }
 
 			    return reversed;
-			}
-		
-		
-		
+			}	
 		
 		/*  This function evaluates "postfix" expressions (also called "Reverse Polish 
 		 * Notation"), which are mathematical expressions but with the operators placed
