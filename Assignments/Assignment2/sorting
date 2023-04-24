@@ -65,13 +65,14 @@ public class Sorting {
 
 
     // shuffle the values of an array a
-    public static void shuffle(int[] a) {
-	Random r = new Random();
-
-	for (int i = 1; i < a.length; ++i) {
-	    int j = r.nextInt(i+1);
-	    swap(a, j, i);
-	}
+    public static void shuffleOld(int[] arr) {
+        // Fisher-Yates shuffle implementation with reverse loop
+        int n = arr.length;
+        ThreadLocalRandom rand = ThreadLocalRandom.current();
+        for (int i = n - 1; i > 0; i--) {
+            int j = rand.nextInt(i + 1);
+            swap(arr, i, j);
+        }
     }
 
     // make a copy of array a
